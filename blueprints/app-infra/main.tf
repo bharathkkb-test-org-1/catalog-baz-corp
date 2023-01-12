@@ -170,7 +170,7 @@ resource "github_actions_secret" "source-secrets" {
 
 
 resource "google_storage_bucket" "backend" {
-  name                     = "${var.app_name}-app-backend"
+  name                     = "${var.app_name}-app-backend-${module.cicd-project.project_id}"
   project                  = module.cicd-project.project_id
   location                 = "US"
   force_destroy            = true
